@@ -1,19 +1,75 @@
 #include "frames-to-speech.h"
+#include "resource.h"
 #include "audio.h"
 
 void playFramesAudio(int frames) {
-	LPCWSTR path = getWavFilePath(frames);
-	if (path[0] != '\0') {
-		PlaySound(path, GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-		//Sleep(400);
+	LPCWSTR path = getWavResourcePath(frames);
+	std::cout << "your resource path: " << path << std::endl;
+	std::cout << "your makeintresource return: " << MAKEINTRESOURCE(IDR_WAVE14) << std::endl;
+	if (path != 0) {
+		PlaySound(path, GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
+		//PlaySound(path, GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC); //directly from a file
 	}
 	//PlaySound(path, GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 	//char* buffer = loadWavFile((char*)WAV_14_PATH);
 	//PlaySound(buffer, GetModuleHandle(NULL), SND_MEMORY);
 }
 
+LPCWSTR getWavResourcePath(int frames) {
+	LPCWSTR path = 0;
+	switch (frames) {
+	case 10:
+		path = MAKEINTRESOURCE(IDR_WAVE10);
+		break;
+	case 11:
+		path = MAKEINTRESOURCE(IDR_WAVE11);
+		break;
+	case 12:
+		path = MAKEINTRESOURCE(IDR_WAVE12);
+		break;
+	case 13:
+		path = MAKEINTRESOURCE(IDR_WAVE13);
+		break;
+	case 14:
+		path = MAKEINTRESOURCE(IDR_WAVE14);
+		break;
+	case 15:
+		path = MAKEINTRESOURCE(IDR_WAVE15);
+		break;
+	case 16:
+		path = MAKEINTRESOURCE(IDR_WAVE16);
+		break;
+	case 17:
+		path = MAKEINTRESOURCE(IDR_WAVE17);
+		break;
+	case 18:
+		path = MAKEINTRESOURCE(IDR_WAVE18);
+		break;
+	case 19:
+		path = MAKEINTRESOURCE(IDR_WAVE19);
+		break;
+	case 20:
+		path = MAKEINTRESOURCE(IDR_WAVE20);
+		break;
+	case 21:
+		path = MAKEINTRESOURCE(IDR_WAVE21);
+		break;
+	case 22:
+		path = MAKEINTRESOURCE(IDR_WAVE22);
+		break;
+	case 23:
+		path = MAKEINTRESOURCE(IDR_WAVE23);
+		break;
+	case 24:
+		path = MAKEINTRESOURCE(IDR_WAVE24);
+		break;
+	}
+	return path;
+}
+
+// not used
 LPCWSTR getWavFilePath(int frames) {
-	LPCWSTR path = L"\0";
+	LPCWSTR path = 0;
 	switch (frames) {
 	case 10:
 		path = WAV_10_PATH;
@@ -64,11 +120,13 @@ LPCWSTR getWavFilePath(int frames) {
 	return path;
 }
 
+// not used
 WavFiles* loadWavFiles() {
 	WavFiles* result;
-
+	return result;
 }
 
+// not used
 char* loadWavFile(char* path) {
 	char* result;
 	FILE* file;

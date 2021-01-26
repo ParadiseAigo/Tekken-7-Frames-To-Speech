@@ -1,5 +1,6 @@
 #include "frames-to-speech.h"
 #include "pointers.h"
+#include "resource.h"
 #include "audio.h"
 
 //TODO:
@@ -36,14 +37,14 @@ void initTekkenHandle() {
 }
 
 void mainLoop() {
-	int oneFrame = 1000/60;  // "60fps"
+	float oneFrame = 1000/60;  // "60fps"
 	void *p1RecoveryFramesPointer, *p1StateFramesPointer, *p2StateFramesPointer;
 	int p1RecoveryFrames;
 	int prevRecoveryFrames = 0, lastPunishableFrames = 0;
 	int p1State, p2State;
 	int p2PrevState = 0, p1PrevState = 0, p1LastPunishableState = 0, p2LastPunishableState = 0;
 	while (true) {
-		Sleep(oneFrame);
+		Sleep((int)oneFrame);
 		p1RecoveryFramesPointer = (void*)getDynamicPointer(tekkenHandle, (void*)P1_RECOVERY_FRAMES_STATIC_POINTER, P1_RECOVERY_FRAMES_POINTER_OFFSETS);
 		p1StateFramesPointer = (void*)getDynamicPointer(tekkenHandle, (void*)P1_STATE_STATIC_POINTER, P1_STATE_POINTER_OFFSETS);
 		p2StateFramesPointer = (void*)getDynamicPointer(tekkenHandle, (void*)P2_STATE_STATIC_POINTER, P2_STATE_POINTER_OFFSETS);

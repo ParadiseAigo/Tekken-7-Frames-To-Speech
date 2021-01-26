@@ -41,6 +41,7 @@ typedef struct WavFiles {
 } WavFiles;
 
 void playFramesAudio(int frames);
+LPCWSTR getWavResourcePath(int frames);
 LPCWSTR getWavFilePath(int frames);
 WavFiles* loadWavFiles();
 char* loadWavFile(char* path);
