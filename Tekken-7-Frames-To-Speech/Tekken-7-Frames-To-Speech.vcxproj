@@ -170,6 +170,9 @@
     <Media Include="audio\wav\23.wav" />
     <Media Include="audio\wav\24.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\le-hwo.ico" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

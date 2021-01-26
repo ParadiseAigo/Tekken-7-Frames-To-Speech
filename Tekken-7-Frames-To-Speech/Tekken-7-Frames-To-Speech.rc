@@ -80,6 +80,16 @@ IDR_WAVE23              WAVE                    "audio\\wav\\23.wav"
 
 IDR_WAVE24              WAVE                    "audio\\wav\\24.wav"
 
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "C:\\Users\\MK\\source\\repos\\Tekken-7-Frames-To-Speech\\le-hwo.ico"
+
 #endif    // English (United Kingdom) resources
 /////////////////////////////////////////////////////////////////////////////
 
