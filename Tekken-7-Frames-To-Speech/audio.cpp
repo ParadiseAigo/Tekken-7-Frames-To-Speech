@@ -4,8 +4,6 @@
 
 void playFramesAudio(int frames) {
 	LPCWSTR path = getWavResourcePath(frames);
-	std::cout << "your resource path: " << path << std::endl;
-	std::cout << "your makeintresource return: " << MAKEINTRESOURCE(IDR_WAVE14) << std::endl;
 	if (path != 0) {
 		PlaySound(path, GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
 		//PlaySound(path, GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC); //directly from a file
