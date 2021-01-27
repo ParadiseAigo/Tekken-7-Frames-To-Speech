@@ -48,6 +48,9 @@ void mainLoop() {
 		p1RecoveryFramesPointer = (void*)getDynamicPointer(tekkenHandle, (void*)P1_RECOVERY_FRAMES_STATIC_POINTER, P1_RECOVERY_FRAMES_POINTER_OFFSETS);
 		p1StateFramesPointer = (void*)getDynamicPointer(tekkenHandle, (void*)P1_STATE_STATIC_POINTER, P1_STATE_POINTER_OFFSETS);
 		p2StateFramesPointer = (void*)getDynamicPointer(tekkenHandle, (void*)P2_STATE_STATIC_POINTER, P2_STATE_POINTER_OFFSETS);
+		if (! isMemoryReadable(tekkenHandle, p1RecoveryFramesPointer)) {
+			continue;
+		}
 		p1RecoveryFrames = readDwordFromMemory(tekkenHandle, p1RecoveryFramesPointer);
 		p1State = readDwordFromMemory(tekkenHandle, p1StateFramesPointer);
 		p2State = readDwordFromMemory(tekkenHandle, p2StateFramesPointer);
