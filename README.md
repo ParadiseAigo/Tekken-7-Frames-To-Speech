@@ -5,7 +5,7 @@
 This is what a blocked minus 10 move will sound like: [example (click on "View raw" to play it)](https://github.com/ParadiseAigo/Tekken-7-Frames-To-Speech/blob/master/Tekken-7-Frames-To-Speech/audio/mp3/10.mp3) (link does not open in a new tab).
 
 ## Installation
-Download the executable [here (link not made yet)](https://github.com/ParadiseAigo/.exe) or you can build it yourself by loading the .sln file in Visual Studio.
+Download the executable [here](https://github.com/ParadiseAigo/Tekken-7-Frames-To-Speech/releases/download/v1.0.0/Tekken-7-Frames-To-Speech.exe) or you can build it yourself by loading the .sln file in Visual Studio.
 
 ## Usage
 Run the executable before or after opening Tekken 7. Restart the program whenever you restart Tekken 7.
