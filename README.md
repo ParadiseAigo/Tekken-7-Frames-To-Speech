@@ -2,7 +2,7 @@
 
 > Block any punishable move in Tekken 7 and a voice will tell you how minus it is exactly.
 
-This is what a blocked minus 10 move will sound like: [example (click on "View raw" to play it)](https://github.com/ParadiseAigo/Tekken-7-Frames-To-Speech/blob/master/Tekken-7-Frames-To-Speech/audio/mp3/10.mp3) (link does not open in a new tab).
+This is what a blocked minus 10 move will sound like: [example](https://github.com/ParadiseAigo/Tekken-7-Frames-To-Speech/blob/master/Tekken-7-Frames-To-Speech/audio/mp3/10.mp3) (click on "View raw" to play it, link does not open in a new tab).
 
 ## Installation
 Download the executable [here](https://github.com/ParadiseAigo/Tekken-7-Frames-To-Speech/releases/download/v1.0.0/Tekken-7-Frames-To-Speech.exe) or you can build it yourself by loading the .sln file in Visual Studio.
