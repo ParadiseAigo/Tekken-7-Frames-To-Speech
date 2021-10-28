@@ -8,6 +8,7 @@
 
 HANDLE tekkenHandle;
 int tekkenPid;
+void* tekkenModulePointer;
 
 int main() {
 	init();
@@ -17,6 +18,7 @@ int main() {
 
 void init() {
 	initTekkenHandle();
+	initModuleAddresses();
 	std::cout << "Program ready!" << std::endl;
 }
 
@@ -36,6 +38,16 @@ void initTekkenHandle() {
 	std::cout << "Opening Tekken process success!" << std::endl;
 }
 
+void initModuleAddresses() {
+	tekkenModulePointer = (void*)getModuleBaseAddress(tekkenPid, TEKKEN_MODULE_NAME);
+	if (tekkenModulePointer == 0) {
+		std::cout << "Error finding the Tekken module base address." << std::endl;
+	}
+	else {
+		std::cout << "Tekken module base address found." << std::endl;
+	}
+}
+
 void mainLoop() {
 	float oneFrame = 1000/60;  // "60fps"
 	void *p1RecoveryFramesPointer, *p1StateFramesPointer, *p2StateFramesPointer;
@@ -45,9 +57,9 @@ void mainLoop() {
 	int p2PrevState = 0, p1PrevState = 0, p1LastPunishableState = 0, p2LastPunishableState = 0;
 	while (true) {
 		Sleep((int)oneFrame);
-		p1RecoveryFramesPointer = (void*)getDynamicPointer(tekkenHandle, (void*)P1_RECOVERY_FRAMES_STATIC_POINTER, P1_RECOVERY_FRAMES_POINTER_OFFSETS);
-		p1StateFramesPointer = (void*)getDynamicPointer(tekkenHandle, (void*)P1_STATE_STATIC_POINTER, P1_STATE_POINTER_OFFSETS);
-		p2StateFramesPointer = (void*)getDynamicPointer(tekkenHandle, (void*)P2_STATE_STATIC_POINTER, P2_STATE_POINTER_OFFSETS);
+		p1RecoveryFramesPointer = (void*)getDynamicPointer(tekkenHandle, (void*) ((QWORD)tekkenModulePointer + P1_RECOVERY_FRAMES_STATIC_POINTER), P1_RECOVERY_FRAMES_POINTER_OFFSETS);
+		p1StateFramesPointer = (void*)getDynamicPointer(tekkenHandle, (void*) ((QWORD)tekkenModulePointer + P1_STATE_STATIC_POINTER), P1_STATE_POINTER_OFFSETS);
+		p2StateFramesPointer = (void*)getDynamicPointer(tekkenHandle, (void*) ((QWORD)tekkenModulePointer + P2_STATE_STATIC_POINTER), P2_STATE_POINTER_OFFSETS);
 		if (! isMemoryReadable(tekkenHandle, p1RecoveryFramesPointer)) {
 			continue;
 		}

@@ -13,16 +13,19 @@ typedef __int64 QWORD;
 
 extern HANDLE tekkenHandle;
 extern int tekkenPid;
+extern void* tekkenModulePointer;
 
 //main.cpp
 void init();
 void initTekkenHandle();
+void initModuleAddresses();
 void mainLoop();
 void closeProgram();
 
 //memory.cpp
 HANDLE getProcessHandle(DWORD pid);
 DWORD getProcessId(const std::wstring& nameProgramExe);
+uintptr_t getModuleBaseAddress(DWORD pid, const wchar_t* moduleName);
 QWORD getDynamicPointer(HANDLE processHandle, void* basePointer, std::vector<DWORD> offsets);
 void writeDwordToMemory(HANDLE processHandle, void* address, DWORD newValue);
 void writeStringLimitedToMemory(HANDLE processHandle, void* address, char* newValue);
