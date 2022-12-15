@@ -13,9 +13,29 @@ void playFramesAudio(int frames) {
 	//PlaySound(buffer, GetModuleHandle(NULL), SND_MEMORY);
 }
 
+// HOW TO ADD NEW .WAV FILES AS A RESOURCE:
+// 1. first copy your new files to the audio/wav/ folder
+// 2. MAKE SURE YOU CLOSE THE "resource.h" FILE IN THE VISUAL STUDIO EDITOR OR YOU WILL GET THE ACCESS DENIED ERROR DURING THE NEXT STEP
+// 3. Inside Visual Studio > *right click* your "Resource Files" folder > Add > Resource... > *select* "WAVE" > Import...
+
 LPCWSTR getWavResourcePath(int frames) {
 	LPCWSTR path = 0;
 	switch (frames) {
+	case 5:
+		path = MAKEINTRESOURCE(IDR_WAVE5);
+		break;
+	case 6:
+		path = MAKEINTRESOURCE(IDR_WAVE4);
+		break;
+	case 7:
+		path = MAKEINTRESOURCE(IDR_WAVE3);
+		break;
+	case 8:
+		path = MAKEINTRESOURCE(IDR_WAVE2);
+		break;
+	case 9:
+		path = MAKEINTRESOURCE(IDR_WAVE1);
+		break;
 	case 10:
 		path = MAKEINTRESOURCE(IDR_WAVE10);
 		break;

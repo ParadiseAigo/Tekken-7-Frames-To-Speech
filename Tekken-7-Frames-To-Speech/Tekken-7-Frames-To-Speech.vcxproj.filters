@@ -93,6 +93,21 @@
     <Media Include="audio\wav\24.wav">
       <Filter>Resource Files</Filter>
     </Media>
+    <Media Include="audio\wav\9.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="audio\wav\8.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="audio\wav\7.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="audio\wav\6.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="audio\wav\5.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\le-hwo.ico">

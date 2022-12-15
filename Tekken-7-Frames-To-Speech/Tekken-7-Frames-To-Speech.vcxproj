@@ -169,6 +169,11 @@
     <Media Include="audio\wav\22.wav" />
     <Media Include="audio\wav\23.wav" />
     <Media Include="audio\wav\24.wav" />
+    <Media Include="audio\wav\5.wav" />
+    <Media Include="audio\wav\6.wav" />
+    <Media Include="audio\wav\7.wav" />
+    <Media Include="audio\wav\8.wav" />
+    <Media Include="audio\wav\9.wav" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\le-hwo.ico" />

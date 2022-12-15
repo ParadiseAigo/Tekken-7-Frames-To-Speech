@@ -13,6 +13,32 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_WAVE1               WAVE                    "audio\\wav\\9.wav"
+
+IDR_WAVE2               WAVE                    "audio\\wav\\8.wav"
+
+IDR_WAVE3               WAVE                    "audio\\wav\\7.wav"
+
+IDR_WAVE4               WAVE                    "audio\\wav\\6.wav"
+
+IDR_WAVE5               WAVE                    "audio\\wav\\5.wav"
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
 // English (United Kingdom) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
